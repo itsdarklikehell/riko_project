@@ -1,0 +1,6 @@
+
+python3:2881783 terminated with signal 11 at PC=5e13963a07ac SP=733c6aae2600.  Backtrace:
+/media/rizzo/RAIDSTATION/stacks/DATA/riko-stack/riko-project/.venv/bin/python3(+0x2e77ac) [0x5e13963a07ac]
+/media/rizzo/RAIDSTATION/stacks/DATA/riko-stack/riko-project/.venv/bin/python3(+0x2e7777) [0x5e13963a0777]
+/lib/x86_64-linux-gnu/libc.so.6(+0x458d0) [0x733c732458d0]
+/media/rizzo/RAIDSTATION/stacks/DATA/riko-stack/riko-project/.venv/lib/python3.11/site-packages/av/../av.libs/libx264-d3456b32.so.165(+0x1eea18) [0x733c6d5eea18]

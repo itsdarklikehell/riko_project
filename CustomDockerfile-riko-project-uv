@@ -1,6 +1,10 @@
 ARG UBUNTU_VERSION=24.04
 ARG CUDA_VERSION=13.0.1
+<<<<<<< HEAD
 # FROM nvidia/cuda:${CUDA_VERSION}-base-ubuntu${UBUNTU_VERSION}
+=======
+# FROM nvidia/cuda:${CUDA_VERSION}-base-ubuntu${UBUNTU_VERSION}"
+>>>>>>> e5a91bd (	new file:   .gitignore)
 
 FROM nvidia/cuda:${CUDA_VERSION}-cudnn-devel-ubuntu${UBUNTU_VERSION}
 
@@ -20,7 +24,11 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y --no-install-recommends \
 software-properties-common build-essential wget curl git ffmpeg ca-certificates libsndfile1
 
+<<<<<<< HEAD
 RUN add-apt-repository ppa:deadsnakes/ppa 
+=======
+RUN add-apt-repository ppa:deadsnakes/ppa
+>>>>>>> e5a91bd (	new file:   .gitignore)
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends \
     python3.11 \
@@ -36,8 +44,13 @@ RUN python3.11 get-pip.py
 RUN rm get-pip.py
 
 # Install uv (Universal Virtualenv) - https://astral.sh/uv/
+<<<<<<< HEAD
 # RUN curl -sSL https://astral.sh/uv/install.sh -o install.sh 
 # RUN bash install.sh 
+=======
+# RUN curl -sSL https://astral.sh/uv/install.sh -o install.sh
+# RUN bash install.sh
+>>>>>>> e5a91bd (	new file:   .gitignore)
 # RUN rm install.sh
 
 # Install PyTorch, Torchvision, Torchaudio with CUDA 12.8 support, and Transformers
@@ -63,7 +76,11 @@ WORKDIR /riko-project
 
 # Install requirements
 # RUN pip install --upgrade --root-user-action=ignore --no-cache-dir --break-system-packages pip
+<<<<<<< HEAD
 RUN pip install --upgrade --root-user-action=ignore --no-cache-dir --break-system-packages uv 
+=======
+RUN pip install --upgrade --root-user-action=ignore --no-cache-dir --break-system-packages uv
+>>>>>>> e5a91bd (	new file:   .gitignore)
 RUN pip install --upgrade --root-user-action=ignore --no-cache-dir --break-system-packages nltk
 
 # Create .venv

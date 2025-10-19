@@ -5,7 +5,8 @@ from process.tts_func.sovits_ping import sovits_gen, play_audio
 from pathlib import Path
 import os
 import time
-### transcribe audio 
+
+### transcribe audio
 import uuid
 import soundfile as sf
 
@@ -15,11 +16,10 @@ def get_wav_duration(path):
         return len(f) / f.samplerate
 
 
-print(' \n ========= Starting Chat... ================ \n')
+print(" \n ========= Starting Chat... ================ \n")
 whisper_model = WhisperModel("base.en", device="cpu", compute_type="float32")
 
 while True:
-
     conversation_recording = output_wav_path = Path("audio") / "conversation.wav"
     conversation_recording.parent.mkdir(parents=True, exist_ok=True)
 
@@ -31,7 +31,7 @@ while True:
 
     tts_read_text = llm_output
 
-    ### file organization 
+    ### file organization
 
     # 1. Generate a unique filename
     uid = uuid.uuid4().hex
@@ -39,9 +39,8 @@ while True:
     output_wav_path = Path("audio") / filename
     output_wav_path.parent.mkdir(parents=True, exist_ok=True)
 
-    # generate audio and save it to client/audio 
-    gen_aud_path = sovits_gen(tts_read_text,output_wav_path)
-
+    # generate audio and save it to client/audio
+    gen_aud_path = sovits_gen(tts_read_text, output_wav_path)
 
     play_audio(output_wav_path)
     # clean up audio files
