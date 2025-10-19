@@ -1,4 +1,4 @@
-OPENAI_API_KEY: sk-
+OPENAI_API_KEY: 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
 history_file: chat_history.json
 model: "gpt-4.1-mini"
 presets:
