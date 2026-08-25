@@ -1,2 +1,8 @@
 config.yaml
 character_config.yaml
+# Python cache (generated, never tracked)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
